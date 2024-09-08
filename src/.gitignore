@@ -1,9 +1,0 @@
-
-# Godot-specific ignores
-.import/
-builder/
-scripts/
-godot_
-export.cfg
-export_presets.cfg
-godot_exec.bat
