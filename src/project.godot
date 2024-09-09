@@ -6,22 +6,13 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
-
-_global_script_classes=[ {
-"base": "PanelContainer",
-"class": "AppGroup",
-"language": "GDScript",
-"path": "res://AppGroup.gd"
-} ]
-_global_script_class_icons={
-"AppGroup": ""
-}
+config_version=5
 
 [application]
 
 config/name="Steam Upload GUI"
-run/main_scene="res://SteamUploader.tscn"
+run/main_scene="res://steam_uploader.tscn"
+config/features=PackedStringArray("4.3")
 config/icon="res://icon.png"
 config/windows_native_icon="res://steam-upload-gui.ico"
 
@@ -29,6 +20,10 @@ config/windows_native_icon="res://steam-upload-gui.ico"
 
 window/size/width=1200
 window/size/height=700
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/turbo_tools/plugin.cfg")
 
 [gui]
 

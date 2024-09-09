@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://AppGroup.gd" type="Script" id=1]
-[ext_resource path="res://theme.tres" type="Theme" id=2]
+[ext_resource type="Script" path="res://app_group.gd" id="1"]
+[ext_resource type="Theme" uid="uid://cyoqo4r8mqjms" path="res://theme.tres" id="2"]
+
 
 [node name="AppGroup" type="PanelContainer"]
 anchor_right = 1.0

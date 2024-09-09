@@ -3,35 +3,31 @@ class_name AppGroup
 
 const CHECK_BOX_TEXT : String = "App ID: %s - %s"
 
-var app_id := "" setget set_app_id
-var vdf_file_name := "" setget set_vdf_file_name
-var desc := "" setget set_desc, get_desc
+var app_id := "":
+	set(value):
+		app_id = value
+		$HBox/CheckBox.text = CHECK_BOX_TEXT % [app_id, vdf_file_name]
+
+var vdf_file_name := "":
+	set(value):
+		vdf_file_name = value
+		$HBox/CheckBox.text = CHECK_BOX_TEXT % [app_id, vdf_file_name]
+		
+var desc := "":
+	set(value):
+		desc = value
+		$HBox/DescEdit.text = desc
 
 
 func setup(_app_id:String, _desc:String, _vdf_file_name:String) -> void:
-	set_app_id(_app_id)
-	set_desc(_desc)
-	set_vdf_file_name(_vdf_file_name)
-
-
-func set_app_id(_app_id:String) -> void:
 	app_id = _app_id
-	$HBox/CheckBox.text = CHECK_BOX_TEXT % [app_id, vdf_file_name]
-
-
-func set_vdf_file_name(_vdf_file_name:String) -> void:
+	desc = _desc
 	vdf_file_name = _vdf_file_name
-	$HBox/CheckBox.text = CHECK_BOX_TEXT % [app_id, vdf_file_name]
 
 
 func has_filter_name(filter:String):
 	filter = filter.to_lower()
 	return filter in app_id.to_lower() or filter in vdf_file_name.to_lower()
-
-
-func set_desc(_desc:String) -> void:
-	desc = _desc
-	$HBox/DescEdit.text = desc
 
 
 func get_desc() -> String:
